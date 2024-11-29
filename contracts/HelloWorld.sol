@@ -1,14 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract HelloWorld {
-    string public message;
+// Do i write a test file for this function before pushing to the blockchain?
 
-    constructor(string memory _message) {
-        message = _message;
-    }
-
-    function setMessage(string memory _message) public {
-        message = _message;
+library helloWorld {
+    function speak(string memory input) internal pure returns (string memory) {
+        return string(abi.encodePacked("Hello, ", input, "!"));
     }
 }
